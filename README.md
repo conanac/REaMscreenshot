@@ -20,8 +20,8 @@ the time) to quickly copy the data before changing.
 Thanks to the following people for providing me with learning 
 opportunity:
 
-cell9 for NTR CFW and all plugins
-patois for NTR CFW Disasm
-enler for NTR CFW DEX
-smealum for libctru
-Others who helped with testing and suggestions
+* cell9 for NTR CFW and all plugins
+* patois for NTR CFW Disasm
+* enler for NTR CFW DEX
+* smealum for libctru
+* Others who helped with testing and suggestions
