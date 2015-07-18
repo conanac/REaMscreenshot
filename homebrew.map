@@ -1,0 +1,515 @@
+Archive member included because of file (symbol)
+
+E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                              rt.o (memcpy)
+E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+                              main.o (memset)
+E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+                              srv.o (strcpy)
+E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+                              rt.o (strlen)
+
+Allocating common symbols
+Common symbol       size              file
+
+IoBasePdc           0x4               main.o
+GSPOffset           0x4               main.o
+IoBasePad           0x4               main.o
+isNewNtr            0x4               main.o
+g_arm11_param3      0x4               main.o
+IoBaseLcd           0x4               main.o
+g_arm11_param2      0x4               main.o
+PtoV                0x4               main.o
+fsUserHandle        0x4               main.o
+buf                 0x4               main.o
+g_arm11_param1      0x4               main.o
+g_arm11_cmd         0x4               main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00100100                . = 0x100100
+                0x00100100                . = ALIGN (0x4)
+
+.text           0x00100100     0x1d44
+                0x00100100                __text_start = .
+ bootloader.o(.text*)
+ .text          0x00100100       0xa0 bootloader.o
+                0x00100100                _Reset
+                0x0010017c                _ReturnToUser
+ *(.text*)
+ .text          0x001001a0       0xd0 pm.o
+                0x001001a0                getCurrentProcessId
+                0x001001c4                getCurrentProcessHandle
+                0x0010022c                protectRemoteMemory
+                0x00100250                protectMemory
+ .text          0x00100270      0x474 rt.o
+                0x00100270                rtInitLock
+                0x0010027c                rtAcquireLock
+                0x001002b0                rtReleaseLock
+                0x001002bc                rtAlignToPageSize
+                0x001002cc                rtGetPageOfAddress
+                0x001002d8                rtCheckRemoteMemoryRegionSafeForWrite
+                0x00100328                rtSafeCopyMemory
+                0x00100380                rtGetFileSize
+                0x0010046c                rtLoadFileToBuffer
+                0x001005b4                rtGenerateJumpCode
+                0x001005cc                rtFlushInstructionCache
+                0x001005e4                rtInitHook
+                0x0010065c                rtEnableHook
+                0x001006a0                rtDisableHook
+ .text          0x001006e4       0x30 entry.o
+                0x001006e4                c_entry
+                0x00100710                IRQHandler
+ .text          0x00100714      0x12c sharedfunc.o
+                0x00100714                initSharedFunc
+ .text          0x00100840      0x690 main.o
+                0x00100840                lcd_solid_fill
+                0x00100894                open_file
+                0x00100914                close_file
+                0x00100918                memdump_to_file
+                0x0010094c                converttorgb
+                0x00100a60                write_to_file
+                0x00100b14                dispatch_arm11_kernel_cmd
+                0x00100b68                cb_arm11_dispatch
+                0x00100b78                arm11k_memcpy
+                0x00100bb8                create_screenshot
+                0x00100df4                create_screenshot_callback
+                0x00100e84                get_screenshot_index
+ .text.startup  0x00100ed0      0x18c main.o
+                0x00100ed0                main
+ .text          0x0010105c      0x144 AC.o
+                0x0010105c                ACU_cmd1
+                0x001010ac                ACU_cmd26
+                0x0010110c                ACU_GetWifiStatus
+                0x00101144                ACU_WaitInternetConnection
+ .text          0x001011a0      0x51c FS.o
+                0x001011a0                FSUSER_Initialize
+                0x001011d4                FSUSER_OpenFile
+                0x00101274                FSUSER_OpenFileDirectly
+                0x00101334                FSUSER_OpenArchive
+                0x001013b8                FSUSER_OpenDirectory
+                0x00101444                FSUSER_CloseArchive
+                0x00101498                FSFILE_Close
+                0x001014c8                FSFILE_Read
+                0x00101534                FSFILE_Write
+                0x001015a8                FSFILE_GetSize
+                0x001015ec                FSFILE_SetSize
+                0x00101628                FSDIR_Read
+                0x0010168c                FSDIR_Close
+ .text          0x001016bc       0x3c OS.o
+                0x001016bc                OS_ConvertVaddr2Physaddr
+ .text          0x001016f8        0x0 SOC.o
+ .text          0x001016f8      0x118 srv.o
+                0x001016f8                exitSrv
+                0x00101710                srv_RegisterClient
+                0x00101750                initSrv
+                0x00101784                srv_getServiceHandle
+ .text          0x00101810       0x50 stub.o
+                0x00101810                showDbg
+                0x00101818                nsDbgPrint
+                0x00101820                plgRegisterMenuEntry
+                0x00101828                plgGetSharedServiceHandle
+                0x00101830                plgRequestMemory
+                0x00101838                plgRegisterCallback
+                0x00101840                plgGetIoBase
+                0x00101848                controlVideo
+                0x00101850                xsprintf
+                0x00101858                kmemcpy
+ .text          0x00101860       0x10 misc.o
+                0x00101860                sleep
+ .text          0x00101870      0x2a0 svc.o
+                0x00101870                getThreadCommandBuffer
+                0x0010187c                svc_controlMemory
+                0x0010189c                svc_exitProcess
+                0x001018a4                svc_createThread
+                0x001018c4                svc_exitThread
+                0x001018cc                svc_sleepThread
+                0x001018d4                svc_createMutex
+                0x001018e8                svc_releaseMutex
+                0x001018f0                svc_releaseSemaphore
+                0x00101904                svc_createEvent
+                0x00101918                svc_signalEvent
+                0x00101920                svc_clearEvent
+                0x00101928                svc_createMemoryBlock
+                0x00101940                svc_mapMemoryBlock
+                0x00101948                svc_unmapMemoryBlock
+                0x00101950                svc_arbitrateAddress
+                0x00101958                svc_closeHandle
+                0x00101960                svc_waitSynchronization1
+                0x00101968                svc_waitSynchronizationN
+                0x00101988                svc_getSystemTick
+                0x00101990                svc_getSystemInfo
+                0x001019ac                svc_getProcessInfo
+                0x001019c8                svc_connectToPort
+                0x001019dc                svc_sendSyncRequest
+                0x001019e4                svc_getProcessId
+                0x001019f8                svc_getThreadId
+                0x00101a0c                svc_setThreadIdealProcessor
+                0x00101a14                svc_openThread
+                0x00101a28                svc_flushProcessDataCache
+                0x00101a30                svc_invalidateProcessDataCache
+                0x00101a38                svc_queryMemory
+                0x00101a40                svc_addCodeSegment
+                0x00101a48                svc_openProcess
+                0x00101a5c                svc_controlProcessMemory
+                0x00101a74                svc_mapProcessMemory
+                0x00101a7c                svc_startInterProcessDma
+                0x00101a9c                svc_getDmaState
+                0x00101ab0                svc_backDoor
+                0x00101ab8                svc_getProcessList
+                0x00101acc                svc_getThreadList
+                0x00101ae0                svc_getThreadContext
+                0x00101ae8                svc_debugActiveProcess
+                0x00101afc                svc_readProcessMemory
+                0x00101b04                svc_writeProcessMemory
+ .text          0x00101b10       0xf0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                0x00101b10                memcpy
+ .text          0x00101c00       0xf4 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+                0x00101c00                memset
+ .text          0x00101cf4       0xf0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+                0x00101cf4                strcpy
+ .text          0x00101de4       0x60 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+                0x00101de4                strlen
+
+.glue_7         0x00101e44        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00101e44        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00101e44        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00101e44        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.plt            0x00101e44        0x0
+ .plt           0x00000000        0x0 bootloader.o
+
+.iplt           0x00101e44        0x0
+ .iplt          0x00000000        0x0 bootloader.o
+                0x00101e44                . = ALIGN (0x4)
+
+.data           0x00101e44       0x18
+ *(.data)
+ .data          0x00101e44        0x0 bootloader.o
+ .data          0x00101e44        0x0 pm.o
+ .data          0x00101e44        0x0 rt.o
+ .data          0x00101e44        0x0 entry.o
+ .data          0x00101e44        0x0 sharedfunc.o
+ .data          0x00101e44       0x18 main.o
+                0x00101e44                sdmcArchive
+ .data          0x00101e5c        0x0 AC.o
+ .data          0x00101e5c        0x0 FS.o
+ .data          0x00101e5c        0x0 OS.o
+ .data          0x00101e5c        0x0 SOC.o
+ .data          0x00101e5c        0x0 srv.o
+ .data          0x00101e5c        0x0 stub.o
+ .data          0x00101e5c        0x0 misc.o
+ .data          0x00101e5c        0x0 svc.o
+ .data          0x00101e5c        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .data          0x00101e5c        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+ .data          0x00101e5c        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+ .data          0x00101e5c        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+
+.dynamic        0x00101e5c       0x80
+ .dynamic       0x00101e5c       0x80 bootloader.o
+                0x00101e5c                _DYNAMIC
+
+.got            0x00101edc        0x0
+ .got           0x00000000        0x0 bootloader.o
+
+.got.plt        0x00101edc        0xc
+ .got.plt       0x00101edc        0xc bootloader.o
+                0x00101edc                _GLOBAL_OFFSET_TABLE_
+
+.igot.plt       0x00101ee8        0x0
+ .igot.plt      0x00000000        0x0 bootloader.o
+                0x00101ee8                . = ALIGN (0x4)
+                0x00101ee8                . = ALIGN (0x4)
+
+.rel.dyn        0x00101ee8      0x2d0
+ *(.__rel_dyn_start)
+ .__rel_dyn_start
+                0x00101ee8        0x0 bootloader.o
+ *(.rel*)
+ .rel.got       0x00000000        0x0 bootloader.o
+ .rel.plt       0x00000000        0x0 bootloader.o
+ .rel.iplt      0x00000000        0x0 bootloader.o
+ .rel.text      0x00101ee8      0x228 bootloader.o
+ .rel.data      0x00102110        0x8 bootloader.o
+ .rel.text.startup
+                0x00102118       0xa0 bootloader.o
+ *(.rel.*)
+ *(.__rel_dyn_end)
+ .__rel_dyn_end
+                0x001021b8        0x0 bootloader.o
+                0x001021b8                __code_end = .
+
+.interp         0x001021b8       0x11
+ .interp        0x001021b8       0x11 bootloader.o
+
+.gnu.version_d  0x001021cc        0x0
+ .gnu.version_d
+                0x00000000        0x0 bootloader.o
+
+.gnu.version    0x001021ca        0x0
+ .gnu.version   0x00000000        0x0 bootloader.o
+
+.gnu.version_r  0x001021cc        0x0
+ .gnu.version_r
+                0x00000000        0x0 bootloader.o
+
+.dynsym         0x001021cc       0x60
+ .dynsym        0x001021cc       0x60 bootloader.o
+
+.dynstr         0x0010222c       0x21
+ .dynstr        0x0010222c       0x21 bootloader.o
+
+.hash           0x00102250       0x2c
+ .hash          0x00102250       0x2c bootloader.o
+
+.rodata.str1.1  0x0010227c      0x267
+ .rodata.str1.1
+                0x0010227c       0x1e pm.o
+ .rodata.str1.1
+                0x0010229a       0x74 rt.o
+ .rodata.str1.1
+                0x0010230e      0x1cb main.o
+                                0x1cc (size before relaxing)
+ .rodata.str1.1
+                0x001024d9        0x5 AC.o
+ .rodata.str1.1
+                0x001024de        0x5 srv.o
+                0x001024e4                . = ALIGN (0x4)
+
+.bss            0x001024e4       0x40
+ *(.__bss_start)
+ .__bss_start   0x001024e4        0x0 bootloader.o
+                0x001024e4                __c_bss_start
+ *(.bss COMMON)
+ .bss           0x001024e4        0x0 bootloader.o
+ .bss           0x001024e4        0x8 pm.o
+                0x001024e4                currentPid
+                0x001024e8                hCurrentProcess
+ .bss           0x001024ec        0x0 rt.o
+ .bss           0x001024ec        0x0 entry.o
+ .bss           0x001024ec        0x0 sharedfunc.o
+ .bss           0x001024ec        0x4 main.o
+                0x001024ec                bmp_idx
+ COMMON         0x001024f0       0x30 main.o
+                0x001024f0                IoBasePdc
+                0x001024f4                GSPOffset
+                0x001024f8                IoBasePad
+                0x001024fc                isNewNtr
+                0x00102500                g_arm11_param3
+                0x00102504                IoBaseLcd
+                0x00102508                g_arm11_param2
+                0x0010250c                PtoV
+                0x00102510                fsUserHandle
+                0x00102514                buf
+                0x00102518                g_arm11_param1
+                0x0010251c                g_arm11_cmd
+ .bss           0x00102520        0x0 AC.o
+ .bss           0x00102520        0x0 FS.o
+ .bss           0x00102520        0x0 OS.o
+ .bss           0x00102520        0x0 SOC.o
+ .bss           0x00102520        0x4 srv.o
+                0x00102520                srvHandle
+ .bss           0x00102524        0x0 stub.o
+ .bss           0x00102524        0x0 misc.o
+ .bss           0x00102524        0x0 svc.o
+ .bss           0x00102524        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .bss           0x00102524        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+ .bss           0x00102524        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+ .bss           0x00102524        0x0 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+ *(.__bss_end)
+ .__bss_end     0x00102524        0x0 bootloader.o
+                0x00102524                __c_bss_end
+                0x00102524                __end__ = .
+LOAD pm.o
+LOAD rt.o
+LOAD entry.o
+LOAD sharedfunc.o
+LOAD main.o
+LOAD AC.o
+LOAD FS.o
+LOAD OS.o
+LOAD SOC.o
+LOAD srv.o
+LOAD stub.o
+LOAD bootloader.o
+LOAD misc.o
+LOAD svc.o
+LOAD E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a
+LOAD E:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/4.9.2\libgcc.a
+OUTPUT(a.out elf32-littlearm)
+
+.dynbss         0x00102524        0x0
+ .dynbss        0x00000000        0x0 bootloader.o
+
+.ARM.attributes
+                0x00000000       0x27
+ .ARM.attributes
+                0x00000000       0x19 bootloader.o
+ .ARM.attributes
+                0x00000019       0x2b pm.o
+ .ARM.attributes
+                0x00000044       0x2b rt.o
+ .ARM.attributes
+                0x0000006f       0x2b entry.o
+ .ARM.attributes
+                0x0000009a       0x2b sharedfunc.o
+ .ARM.attributes
+                0x000000c5       0x2b main.o
+ .ARM.attributes
+                0x000000f0       0x2b AC.o
+ .ARM.attributes
+                0x0000011b       0x2b FS.o
+ .ARM.attributes
+                0x00000146       0x2b OS.o
+ .ARM.attributes
+                0x00000171       0x2b SOC.o
+ .ARM.attributes
+                0x0000019c       0x2b srv.o
+ .ARM.attributes
+                0x000001c7       0x19 stub.o
+ .ARM.attributes
+                0x000001e0       0x19 misc.o
+ .ARM.attributes
+                0x000001f9       0x19 svc.o
+ .ARM.attributes
+                0x00000212       0x30 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000242       0x30 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000272       0x30 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x000002a2       0x30 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+
+.comment        0x00000000       0x22
+ .comment       0x00000000       0x22 pm.o
+                                 0x23 (size before relaxing)
+ .comment       0x00000000       0x23 rt.o
+ .comment       0x00000000       0x23 entry.o
+ .comment       0x00000000       0x23 sharedfunc.o
+ .comment       0x00000000       0x23 main.o
+ .comment       0x00000000       0x23 AC.o
+ .comment       0x00000000       0x23 FS.o
+ .comment       0x00000000       0x23 OS.o
+ .comment       0x00000000       0x23 SOC.o
+ .comment       0x00000000       0x23 srv.o
+ .comment       0x00000000       0x23 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .comment       0x00000000       0x23 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-memset.o)
+ .comment       0x00000000       0x23 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strcpy.o)
+ .comment       0x00000000       0x23 E:/devkitPro/devkitARM/arm-none-eabi/lib\libc.a(lib_a-strlen.o)
+
+.debug_info     0x00000000     0x33ce
+ .debug_info    0x00000000      0x324 pm.o
+ .debug_info    0x00000324      0xa84 rt.o
+ .debug_info    0x00000da8      0x11f entry.o
+ .debug_info    0x00000ec7      0x35c sharedfunc.o
+ .debug_info    0x00001223     0x1131 main.o
+ .debug_info    0x00002354      0x368 AC.o
+ .debug_info    0x000026bc      0x8a9 FS.o
+ .debug_info    0x00002f65       0xc0 OS.o
+ .debug_info    0x00003025       0x72 SOC.o
+ .debug_info    0x00003097      0x337 srv.o
+
+.debug_abbrev   0x00000000      0xdab
+ .debug_abbrev  0x00000000      0x149 pm.o
+ .debug_abbrev  0x00000149      0x2aa rt.o
+ .debug_abbrev  0x000003f3       0xcc entry.o
+ .debug_abbrev  0x000004bf       0xfb sharedfunc.o
+ .debug_abbrev  0x000005ba      0x36c main.o
+ .debug_abbrev  0x00000926      0x13f AC.o
+ .debug_abbrev  0x00000a65      0x144 FS.o
+ .debug_abbrev  0x00000ba9       0x6d OS.o
+ .debug_abbrev  0x00000c16       0x26 SOC.o
+ .debug_abbrev  0x00000c3c      0x16f srv.o
+
+.debug_loc      0x00000000     0x19a4
+ .debug_loc     0x00000000       0xfa pm.o
+ .debug_loc     0x000000fa      0x504 rt.o
+ .debug_loc     0x000005fe       0x34 entry.o
+ .debug_loc     0x00000632      0x869 main.o
+ .debug_loc     0x00000e9b      0x1cc AC.o
+ .debug_loc     0x00001067      0x7bb FS.o
+ .debug_loc     0x00001822       0x5c OS.o
+ .debug_loc     0x0000187e      0x126 srv.o
+
+.debug_aranges  0x00000000      0x140
+ .debug_aranges
+                0x00000000       0x20 pm.o
+ .debug_aranges
+                0x00000020       0x20 rt.o
+ .debug_aranges
+                0x00000040       0x20 entry.o
+ .debug_aranges
+                0x00000060       0x20 sharedfunc.o
+ .debug_aranges
+                0x00000080       0x28 main.o
+ .debug_aranges
+                0x000000a8       0x20 AC.o
+ .debug_aranges
+                0x000000c8       0x20 FS.o
+ .debug_aranges
+                0x000000e8       0x20 OS.o
+ .debug_aranges
+                0x00000108       0x18 SOC.o
+ .debug_aranges
+                0x00000120       0x20 srv.o
+
+.debug_line     0x00000000      0xd7b
+ .debug_line    0x00000000      0x11e pm.o
+ .debug_line    0x0000011e      0x225 rt.o
+ .debug_line    0x00000343       0xe1 entry.o
+ .debug_line    0x00000424      0x105 sharedfunc.o
+ .debug_line    0x00000529      0x2d9 main.o
+ .debug_line    0x00000802      0x12e AC.o
+ .debug_line    0x00000930      0x1d3 FS.o
+ .debug_line    0x00000b03       0xed OS.o
+ .debug_line    0x00000bf0       0x1d SOC.o
+ .debug_line    0x00000c0d      0x16e srv.o
+
+.debug_str      0x00000000      0xb7a
+ .debug_str     0x00000000      0x1aa pm.o
+                                0x21b (size before relaxing)
+ .debug_str     0x000001aa      0x2e3 rt.o
+                                0x487 (size before relaxing)
+ .debug_str     0x0000048d       0x41 entry.o
+                                0x147 (size before relaxing)
+ .debug_str     0x000004ce       0xc8 sharedfunc.o
+                                0x22c (size before relaxing)
+ .debug_str     0x00000596      0x36a main.o
+                                0x6a3 (size before relaxing)
+ .debug_str     0x00000900       0xb7 AC.o
+                                0x1e6 (size before relaxing)
+ .debug_str     0x000009b7      0x10f FS.o
+                                0x364 (size before relaxing)
+ .debug_str     0x00000ac6       0x33 OS.o
+                                0x120 (size before relaxing)
+ .debug_str     0x00000af9       0x15 SOC.o
+                                 0xee (size before relaxing)
+ .debug_str     0x00000b0e       0x6c srv.o
+                                0x1f0 (size before relaxing)
+
+.debug_frame    0x00000000      0x6e8
+ .debug_frame   0x00000000       0x80 pm.o
+ .debug_frame   0x00000080      0x164 rt.o
+ .debug_frame   0x000001e4       0x30 entry.o
+ .debug_frame   0x00000214       0x34 sharedfunc.o
+ .debug_frame   0x00000248      0x194 main.o
+ .debug_frame   0x000003dc       0x8c AC.o
+ .debug_frame   0x00000468      0x1e0 FS.o
+ .debug_frame   0x00000648       0x20 OS.o
+ .debug_frame   0x00000668       0x80 srv.o
+
+.debug_ranges   0x00000000       0x80
+ .debug_ranges  0x00000000       0x50 rt.o
+ .debug_ranges  0x00000050       0x30 main.o
